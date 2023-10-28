@@ -1,0 +1,9 @@
+name: molywood
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - vmd
+  - ffmpeg
+  - imagemagick
+  - conda

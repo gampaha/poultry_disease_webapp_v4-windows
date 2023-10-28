@@ -1,0 +1,3 @@
+cd /d D:\
+cd D:\Poultry Web App Final System\poultry_disease_webapp_v4-windows
+Run App: uvicorn app:app --reload

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>PDP</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- Favicons -->
+  <link href="static\img\favicon.png" rel="icon">
+  <link href="static\img\apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="static\vendor\aos\aos.css" rel="stylesheet">
+  <link href="static\vendor\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+  <link href="static\vendor\bootstrap-icons\bootstrap-icons.css" rel="stylesheet">
+  <link href="static\vendor\boxicons\css\boxicons.min.css" rel="stylesheet">
+  <link href="static\vendor\glightbox\css\glightbox.min.css" rel="stylesheet">
+  <link href="static\vendor\swiper\swiper-bundle.min.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="static\css\style.css" rel="stylesheet">
+  <!-- =======================================================
+  * Template Name: Day - v4.8.0
+  * Template URL: https://bootstrapmade.com/day-multipurpose-html-template-for-free/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<body>
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+      </div>
+    </div>
+  </section>
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="{{ url_for('index') }}" class="btn-get-started scrollto" type="submit" name="gen_report" value="upload_form" id="sub"><h1 class="logo">Poultry Disease Prediction Report</h1></a>
+      <!-- <h1 class="logo"><a href="index.html">Poultry Disease Prediction Report</a></h1> -->
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="static/img/logo.png" alt="" class="img-fluid"></a>-->
+    </div>
+  </header><!-- End Header -->
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+      <h1>Congratulations, Your Live Stocks are, </h1> <h1 style="color:rgb(20, 192, 34);">{{disease}}</h1>
+      <h2>with the Confidence Score of {{confidence_score}}%</h2>
+      <h2>Keep Doing What You Do to Protect and Treat Your Live Stocks</h2>     
+    </div>
+  </section> 
+  <!-- End Hero -->
+ <section>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+       $(document).ready(function() {
+          $('form').submit(function(event) {
+             event.preventDefault();
+             $.ajax({
+                type: 'POST',
+                url: '/feedback',
+                data: $('form').serialize(),
+                success: function() {
+                   $('#feedback').val('');
+                   alert('Thank You For Your Feedback!');
+                }
+             });
+          });
+       });
+    </script> 
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+      <h1>Please Give Us Your Feedback</h1>
+      <form><!-- <input type="text" name="assignment"> --><!-- <input type="text" style="color: black;" feedback="feedback" placeholder="Your feedback" required class="btn-get-started scrollto">   -->
+        <textarea class="form-control" style="color: black;" id="feedback" name="feedback"  rows="5" placeholder="We Welcome Your feedback" required></textarea>
+        <input style="color: black;" type="submit" class="btn-get-started scrollto"></form> 
+    </form>
+    </div>
+  </section>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<div id="preloader"></div>
+<!-- Vendor JS Files -->
+  <script src="static\vendor\aos\aos.js"></script>
+  <script src="static\vendor\bootstrap\js\bootstrap.bundle.min.js"></script>
+  <script src="static\vendor\glightbox\js\glightbox.min.js"></script>
+  <script src="static\vendor\isotope-layout\isotope.pkgd.min.js"></script>
+  <script src="static\vendor\swiper\swiper-bundle.min.js"></script>
+  <script src="static\vendor\php-email-form\validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static\js\main.js"></script>
+
+</body>
+
+</html>
+
+<!-- <script>
+  function previewImages() {
+
+var preview = document.querySelector('#preview');
+
+if (this.files) {
+  [].forEach.call(this.files, readAndPreview);
+}
+
+function readAndPreview(file) {
+
+  // Make sure `file.name` matches our extensions criteria
+  if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+    return alert(file.name + " is not an image");
+  } // else...
+
+  var reader = new FileReader();
+
+  reader.addEventListener("load", function() {
+    var image = new Image();
+    image.height = 100;
+    image.title  = file.name;
+    image.src    = this.result;
+    preview.appendChild(image);
+  });
+
+  reader.readAsDataURL(file);
+
+}
+
+}
+
+document.querySelector('#file-input').addEventListener("change", previewImages);
+</script> -->

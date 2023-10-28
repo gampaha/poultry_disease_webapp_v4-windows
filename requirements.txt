@@ -1,0 +1,9 @@
+fastapi
+pydantic
+uvicorn
+numpy==1.19.5
+torch
+pycocotools==2.0.4
+matplotlib==3.5.1 
+python-multipart==0.0.5
+opencv-python
